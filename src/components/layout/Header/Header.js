@@ -97,7 +97,7 @@ const Component = ({className, children}) => {
                   href='/'
                 >
                   <Link to={'/'} className={styles.link}>
-                  Yours adverts
+                  Your adverts
                   </Link>
                   <AccountCircle />
                 Logout

@@ -1,4 +1,29 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+   .addCard {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+    &__item {
+      flex-basis: 49%;
+      margin-bottom: 20px;
+
+      .image {
+        max-height: 30vh;
+      }
+
+      .price {
+        margin-top: 15px;
+      }
+    }
+  }
+}
