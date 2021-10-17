@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 export const initialState = {
   posts: {
     data: [
@@ -10,7 +11,7 @@ export const initialState = {
         email: 'john.doe@gmail.com',
         status: 'published',
         image: 'https://images.pexels.com/photos/5602170/pexels-photo-5602170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        price: '1250$',
+        price: '1250',
         phone: '+48 663065410',
         location: 'Warsaw',
       },
@@ -23,7 +24,7 @@ export const initialState = {
         email: 'anna.doe@gmail.com',
         status: 'published',
         image: 'https://images.pexels.com/photos/3607201/pexels-photo-3607201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-        price: '200$',
+        price: '200',
         phone: '+48 666609823',
         location: 'Oslo',
       },
@@ -36,7 +37,7 @@ export const initialState = {
         email: 'mike.doe@gmail.com',
         status: 'closed',
         image: 'https://images.pexels.com/photos/1269807/pexels-photo-1269807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        price: '500$',
+        price: '500',
         phone: '+48 668249746',
         location: 'Prague',
       },
@@ -49,7 +50,7 @@ export const initialState = {
         email: 'jack.doe@gmail.com',
         status: 'draft',
         image: 'https://images.pexels.com/photos/2406875/pexels-photo-2406875.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        price: '333$',
+        price: '333',
         phone: '+48 660823894',
         location: 'Madrid',
       },
@@ -58,5 +59,8 @@ export const initialState = {
       active: false,
       error: false,
     },
+  },
+  user: {
+    active: true,
   },
 };

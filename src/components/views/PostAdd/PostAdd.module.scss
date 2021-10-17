@@ -1,4 +1,22 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin: 25px auto;
+  max-width: 1040px;
+
+  .form {
+    max-width: 960px;
+  }
+
+  .header {
+    padding: 20px 0
+  }
+
+  .grid {
+    padding: 5px 0
+
+  }
+  .btnSubmit {
+    margin: 10px 0;
+  }
+}

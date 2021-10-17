@@ -1,13 +1,17 @@
+/* eslint-disable linebreak-style */
 import {combineReducers, createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { initialState } from './initialState';
 import { reducer as postsReducer } from './postsRedux';
+import { reducer as usersSwitcherReducer } from './usersSwitcherRedux';
+
 
 // define reducers
 const reducers = {
   posts: postsReducer,
+  users: usersSwitcherReducer,
 };
 
 // add blank reducers for initial state properties without reducers

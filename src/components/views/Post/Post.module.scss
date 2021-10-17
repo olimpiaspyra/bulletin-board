@@ -1,4 +1,73 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  padding-top: 40px;
+
+  .postContainer {
+    max-width: 1040px;
+    padding: 0 10px;
+  }
+
+  .postImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-right: 10px;
+
+    .postDescription {
+      padding-bottom: 10px;
+    }
+
+    .postDetails {
+      display: flex;
+      padding: 5px 0;
+
+      .detailsIcon {
+        width: 18px;
+      }
+
+      .author {
+        font-size: 15px;
+        padding-left: 6px;
+      }
+    }
+
+    .titleWrapper {
+      display: flex;
+
+      .postEdit {
+        display: flex;
+        flex-direction: row-reverse;
+
+        .editIcon {
+          margin: auto;
+          width: 15px;
+        }
+
+        .editContent {
+          margin: auto;
+          font-size: 14px;
+          padding-left: 4px;
+        }
+      }
+
+      .title {
+        flex: auto;
+      }
+    }
+
+    .date {
+      margin-top: auto;
+      text-align: right;
+    }
+
+    .postStatus {
+      font-size: 0.875rem;
+    }
+  }
+}

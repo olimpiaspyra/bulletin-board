@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+/* eslint-disable linebreak-style */
+import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { connect } from 'react-redux';
+import { getStatus } from '../../../redux/usersSwitcherRedux.js';
 
 import styles from './Header.module.scss';
 
@@ -17,9 +18,6 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormGroup from '@material-ui/core/FormGroup';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,28 +31,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Component = ({className, children}) => {
+const Component = ({className, children, userStatus}) => {
   const classes = useStyles();
-  const [user, setUser] = useState(false);
-  const handleChange = (event) => {
-    setUser(event.target.checked);
-  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <div className={clsx(className, styles.root)}>
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Switch
-                checked={user}
-                onChange={handleChange}
-                aria-label='login switch'
-              />
-            }
-            label={user ? 'Logout' : 'Login'}
-          />
-        </FormGroup>
         <AppBar position='static'>
           <Toolbar className={styles.toolbar}>
             <IconButton
@@ -64,6 +46,8 @@ const Component = ({className, children}) => {
               aria-label='menu'
               sx={{ mr: 2 }}
               className={classes.menuButton}
+              component={Link}
+              to={'/'}
             >
               <HomeIcon />
             </IconButton>
@@ -71,7 +55,7 @@ const Component = ({className, children}) => {
             Bulletin Board
             </Typography>
 
-            {!user && (
+            {!userStatus && (
               <div>
                 <IconButton
                   size='small'
@@ -86,7 +70,7 @@ const Component = ({className, children}) => {
                 </IconButton>
               </div>
             )}
-            {user && (
+            {userStatus && (
               <div>
                 <IconButton
                   size='small'
@@ -115,20 +99,17 @@ const Component = ({className, children}) => {
 Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  userStatus: PropTypes.bool,
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+const mapStateToProps = state => ({
+  userStatus: getStatus(state),
+});
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps)(Component);
 
 export {
-  Component as Header,
-  // Container as Header,
+  // Component as Header,
+  Container as Header,
   Component as HeaderComponent,
 };
