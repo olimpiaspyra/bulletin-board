@@ -86,6 +86,7 @@ class Component extends React.Component {
                 buttonText='Choose image'
                 imgExtension={['.jpg', '.gif', '.png', '.gif']}
                 maxFileSize={5242880}
+                src={post.image}
               />
             </Paper>
           </Grid>

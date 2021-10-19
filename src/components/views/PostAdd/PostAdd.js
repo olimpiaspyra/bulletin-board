@@ -243,7 +243,7 @@ Component.propTypes = {
   userStatus: PropTypes.bool,
 };
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state) => ({
   userStatus: getStatus(state),
 });
 

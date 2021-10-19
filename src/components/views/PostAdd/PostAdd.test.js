@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { shallow } from 'enzyme';
 import { PostAddComponent } from './PostAdd';
